@@ -18,9 +18,9 @@ def main():
 
     table_list = [
     { "table_name":"[Person].[Person]", "where_condition":"1=1", "select_condition": "top 50000 * "},
-        { "table_name":"Production.WorkOrder", "where_condition":"1=1", "select_condition": "top 10000 * "},
-        { "table_name":"Sales.SalesOrderDetail", "where_condition":"UnitPrice>20", "select_condition": "top 20000 * "},
-        { "table_name":"Sales.CreditCard", "where_condition":"1=1", "select_condition": " * "}
+        { "table_name":"[Production].[WorkOrder]", "where_condition":"1=1", "select_condition": "top 10000 * "},
+        { "table_name":"[Sales].[SalesOrderDetail]", "where_condition":"UnitPrice>20", "select_condition": "top 20000 * "},
+        { "table_name":"[Sales].[CreditCard]", "where_condition":"1=1", "select_condition": " * "}
     ]
 
     try:
@@ -35,7 +35,7 @@ def main():
             df.to_sql(table["table_name"], sqllite_con, if_exists='replace', index=False)
 
             # Verify by reading back
-            df_stored=pd.read_sql(f"SELECT * FROM {table["table_name"]}", sqllite_con)
+            df_stored=pd.read_sql(f"SELECT * FROM '{table["table_name"]}'", sqllite_con)
             #df_stored = duck_conn.execute(f"SELECT * FROM {table["table_name"]}").fetchdf()
             print(df_stored)
 
