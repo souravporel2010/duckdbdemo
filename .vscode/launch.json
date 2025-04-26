@@ -31,6 +31,24 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
 
+        },
+        {
+            "name": "sqllite_write",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sqllite_write/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+
+        },
+        {
+            "name": "sqllite_read",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sqllite_read/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+
         }
 
     ]

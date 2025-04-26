@@ -8,9 +8,9 @@ def main():
     duckdb_location="E:\\PROJECT\\duckdb_file"
 
     try:
-        duck_conn =duckdb.connect(f'{duckdb_location}\\my_database.duckdb')
+        duck_conn =duckdb.connect(f'{duckdb_location}\\my_database.duckdb',read_only=True)
         # Verify by reading back
-        df_stored = duck_conn.execute("SELECT * FROM Person").fetchdf()
+        df_stored = duck_conn.execute("SELECT * FROM 'Sales.SalesOrderDetail'").fetchdf()
         print(df_stored)
     except Exception as e:
         print("Error:", e)
