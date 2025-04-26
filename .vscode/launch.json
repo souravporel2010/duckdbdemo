@@ -6,13 +6,32 @@
     "configurations": [
 
         {
-            "name": "Python Debugger: Current File",
+            "name": "duckdb_write",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/duckdbdemo/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
 
+        },
+        {
+            "name": "duckdb_read",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/duckdbread/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+
+        },
+        {
+            "name": "duckdb_read_secoond",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/duckdbread_second/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+
         }
+
     ]
 }

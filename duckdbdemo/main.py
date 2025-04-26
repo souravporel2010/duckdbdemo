@@ -11,6 +11,7 @@ def main():
     database = 'AdventureWorks2022'
     username = 'sa'
     password = '02021988sp'  
+    duckdb_location="E:\\PROJECT\\duckdb_file"
 
     conn_str = f"DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}"
 
@@ -23,10 +24,10 @@ def main():
 
         #print(df)
 
-        duck_conn =duckdb.connect('my_database.duckdb')
-        #duck_conn.register("temp_df", df)
+        duck_conn =duckdb.connect(f'{duckdb_location}\\my_database.duckdb')
+        duck_conn.register("temp_df", df)
 
-        #duck_conn.execute("CREATE TABLE IF NOT EXISTS Person AS SELECT * FROM temp_df")
+        duck_conn.execute("CREATE TABLE IF NOT EXISTS Person AS SELECT * FROM temp_df")
 
         # Verify by reading back
         df_stored = duck_conn.execute("SELECT * FROM Person").fetchdf()
