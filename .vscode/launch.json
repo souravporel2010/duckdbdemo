@@ -9,7 +9,7 @@
             "name": "duckdb_write",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/duckdbdemo/main.py",
+            "program": "${workspaceFolder}/duckdb_write/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
 
